@@ -22,7 +22,7 @@
                         </td>
 
                         <td>
-                            <select name="Codigo_nat_escrita" id="Codigo_nat_escrita">
+                            <select name="Codigo_nat_escrita" id="Codigo_nat_escrita" value ="@Model.escritura.CNE">
                                 <option value="compraventa">Compraventa</option>
                                 <option value="patrimonio">Regularizacion de Patrimonio</option>
                             </select>
@@ -37,7 +37,7 @@
                         </td>
 
                         <td>
-                            <input type="checkbox" id="checkbox1a" name="checkbox1a" onclick="uncheckOther('checkbox1a', 'checkbox1b')">
+                            <input type="checkbox" id="checkbox1a" name="checkbox1a" onclick="uncheckOther('checkbox1a', 'checkbox1b')" >
                             <label for="checkbox1a">SI</label>
 
                             <input type="checkbox" id="checkbox1b" name="checkbox1b" onclick="uncheckOther('checkbox1b', 'checkbox1a')">
@@ -53,7 +53,7 @@
 
                         <td>
                             <input type="text" id="N_repertorio" name="N_repertorio" required
-                                   minlength="4" maxlength="20" size="10">
+                                   minlength="4" maxlength="20" size="10"value ="@Model.escritura.NumeroInscripcion">
                         </td>
 
                         <td>
@@ -62,7 +62,7 @@
 
                         <td>
                             <input type="text" id="Fecha_escritura" name="Fecha_escritura" required
-                                   minlength="4" maxlength="8" size="10">
+                                   minlength="4" maxlength="8" size="10"value ="@Model.escritura.FechaInscripcion">
 
                         </td>
 
@@ -86,7 +86,7 @@
 
                         <td>
                             <input type="text" id="COMUNA" name="COMUNA" required
-                                   minlength="4" maxlength="20" size="10">
+                                   minlength="4" maxlength="20" size="10"value ="@Model.escritura.Comuna">
                         </td>
                         <td>
                             <label for="MANZANA">MANZANA:</label>
@@ -94,7 +94,7 @@
 
                         <td>
                             <input type="text" id="MANZANA" name="MANZANA" required
-                                   minlength="4" maxlength="20" size="10">
+                                   minlength="4" maxlength="20" size="10"value ="@Model.escritura.Manzana">
                         </td>
                         <td>
                             <label for="PREDIO">PREDIO:</label>
@@ -102,7 +102,7 @@
 
                         <td>
                             <input type="text" id="PREDIO" name="PREDIO" required
-                                   minlength="4" maxlength="20" size="10">
+                                   minlength="4" maxlength="20" size="10" value ="@Model.escritura.Predio">
                         </td>
                     </tr>
                 </table>
@@ -161,7 +161,7 @@
 
                         <td>
                             <input type="number" id="Fojas" name="Fojas" required
-                                   minlength="4" maxlength="20" size="10">
+                                   minlength="4" maxlength="20" size="10"value ="@Model.escritura.Fojas">
                         </td>
                         <td>
                             <label for="Fecha_Inscripcion">Fecha Inscripción:</label>
@@ -198,7 +198,7 @@
     </div>
 
     @section Scripts {
-        @Scripts.Render("~/bundles/jqueryval")
+       
         <script src="~/static/js/add_info.js"></script>
         <script src="~/bootstrap/js/botones.js"></script>
         <link rel="stylesheet" href="@Url.Content("~/static/css/add_info.css")">
