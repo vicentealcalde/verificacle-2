@@ -1,0 +1,208 @@
+﻿@page
+@model aplicacion_2.Pages.Escrituras.CreateModel
+@{
+}
+
+<br>
+<h2> Nueva escritura</h2>
+<br/>
+
+<form method="POST">
+    <div class="container">
+        <div class="card">
+            <div class="card-header bg-primary mb-3">
+                INFORMACIÓN DE LA ESCRITURA
+            </div>
+            <div class="card-body">
+                <table class="default">
+                    <tr>
+
+                        <td>
+                            <label for="Codigo_nat_escrita">Codigo Naturaleza Escrita:</label>
+                        </td>
+
+                        <td>
+                            <select name="Codigo_nat_escrita" id="Codigo_nat_escrita">
+                                <option value="compraventa">Compraventa</option>
+                                <option value="patrimonio">Regularizacion de Patrimonio</option>
+                            </select>
+
+                        </td>
+
+                        <td>
+                            <label for="Propiedad_acogida">
+                                Propiedad acogida a
+                                D.F.L N° 2 segun escritura:
+                            </label>
+                        </td>
+
+                        <td>
+                            <input type="checkbox" id="checkbox1a" name="checkbox1a" onclick="uncheckOther('checkbox1a', 'checkbox1b')">
+                            <label for="checkbox1a">SI</label>
+
+                            <input type="checkbox" id="checkbox1b" name="checkbox1b" onclick="uncheckOther('checkbox1b', 'checkbox1a')">
+                            <label for="checkbox1b">NO</label>
+
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="N_repertorio">N° Repertorio:</label>
+                        </td>
+
+                        <td>
+                            <input type="text" id="N_repertorio" name="N_repertorio" required
+                                   minlength="4" maxlength="20" size="10">
+                        </td>
+
+                        <td>
+                            <label for="Fecha_escritura">Fecha escritura:</label>
+                        </td>
+
+                        <td>
+                            <input type="text" id="Fecha_escritura" name="Fecha_escritura" required
+                                   minlength="4" maxlength="8" size="10">
+
+                        </td>
+
+
+                    </tr>
+                </table>
+
+
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header bg-primary mb-3">
+                COMUNA | MANZANA | PREDIO
+            </div>
+            <div class="card-body">
+                <table class="default">
+                    <tr>
+                        <td>
+                            <label for="COMUNA">COMUNA:</label>
+                        </td>
+
+                        <td>
+                            <input type="text" id="COMUNA" name="COMUNA" required
+                                   minlength="4" maxlength="20" size="10">
+                        </td>
+                        <td>
+                            <label for="MANZANA">MANZANA:</label>
+                        </td>
+
+                        <td>
+                            <input type="text" id="MANZANA" name="MANZANA" required
+                                   minlength="4" maxlength="20" size="10">
+                        </td>
+                        <td>
+                            <label for="PREDIO">PREDIO:</label>
+                        </td>
+
+                        <td>
+                            <input type="text" id="PREDIO" name="PREDIO" required
+                                   minlength="4" maxlength="20" size="10">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header bg-primary mb-3">
+                INFORMACIÓN DE LOS ADQUIRENTE(S) O HEREDERO(S)
+            </div>
+            <div class="card-body">
+                <table class="default" id="Adquirente">
+                    <tr>
+                        <th>RUT</th>
+                        <th>Razon Social/Apellidos Nombres</th>
+                        <th>% Derechos</th>
+                        <th>% Derechos no acreditados</th>
+                        <th>Titulos Precedentes</th>
+                        <th>Accion</th>
+                    </tr>
+                </table>
+                <div id="div_button">
+                    <button id="add_button" type="button" class="btn btn-primary rounded-pill" onclick="addNewRow()"> Agregar fila</button>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header bg-primary mb-3">
+                INFORMACIÓN DE LOS ENAJENANTE(S) O CAUSANTE(S)
+            </div>
+            <div class="card-body">
+                <table class="default" id="Enajenantes">
+                    <tr>
+                        <th>RUT</th>
+                        <th>Razon Social/Apellidos Nombres</th>
+                        <th>% Derechos</th>
+                        <th>% Derechos no acreditados</th>
+                        <th>Titulos Precedentes</th>
+                        <th>Accion</th>
+                    </tr>
+                </table>
+                <div id="div_button">
+                    <button id="add_button2" type="button" class="btn btn-primary rounded-pill" onclick="addNewRowEnajenantes()"> Agregar fila</button>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header bg-primary mb-3">
+                OTROS
+            </div>
+            <div class="card-body">
+                <table class="default">
+                    <tr>
+                        <td>
+                            <label for="Fojas">Fojas:</label>
+                        </td>
+
+                        <td>
+                            <input type="number" id="Fojas" name="Fojas" required
+                                   minlength="4" maxlength="20" size="10">
+                        </td>
+                        <td>
+                            <label for="Fecha_Inscripcion">Fecha Inscripción:</label>
+                        </td>
+
+                        <td>
+                            <input type="date" id="Fecha_Inscripcion" name="Fecha_Inscripcion" required
+                                   minlength="4" maxlength="20" size="10">
+                        </td>
+                        <td>
+                            <label for="Numero_Inscripcion">Numero Inscripcion:</label>
+                        </td>
+
+                        <td>
+                            <input type="number" id="Numero_Inscripcion" name="Numero_Inscripcion" required
+                                   minlength="4" maxlength="20" size="10">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+        <script src="~/static/js/add_info.js"></script>
+        <script src="~/bootstrap/js/botones.js"></script>
+        <link rel="stylesheet" href="@Url.Content("~/static/css/add_info.css")">
+    }
+
+
+</form>
